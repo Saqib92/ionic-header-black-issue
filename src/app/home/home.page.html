@@ -1,20 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md">
     <ion-title>
-      Blank
+      <div class="ion-text-center ion-padding home-logo">
+        <img [src]="'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'" />
+      </div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-button (click)="opens = true">OPen modal</ion-button>
+
+<ion-button [routerLink]="['/about']">Go to About Page</ion-button>
+
+
+  <!-- Card Modal -->
+  <ion-modal [isOpen]="opens" [swipeToClose]="false" [presentingElement]="routerOutlet.nativeEl">
+    <ng-template>
+      <ion-content>
+        Modal Content
+        <ion-button (click)="opens = false">Close modal</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IonRouterOutlet } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
+  opens: boolean = false;
+  constructor(
+    public routerOutlet: IonRouterOutlet
+  ) {}
 
 }
